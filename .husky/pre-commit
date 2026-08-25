@@ -1,0 +1,7 @@
+if [ -f .git/MERGE_HEAD ]; then
+  echo "Merge in progress — skipping pre-commit checks."
+  exit 0
+fi
+
+pnpm exec lint-staged
+pnpm typecheck
