@@ -26,7 +26,7 @@
 │   ├── pre-commit          # 提交前：merge 检测 → lint-staged → typecheck
 │   └── commit-msg          # 提交前：commitlint 校验 message
 ├── .lintstagedrc           # lint-staged 配置（默认 prettier 全文件）
-├── .prettierrc             # prettier 配置（默认 singleQuote）
+├── .prettierrc             # prettier 配置（singleQuote + compact-markdown-table 插件）
 ├── commitlint.config.cjs   # commitlint 配置（继承 conventional）
 ├── package.json            # 依赖 + prepare 脚本 + typecheck 占位
 └── README.md
@@ -115,11 +115,11 @@ commit-msg 钩子同理：`git commit` 获取 message 后调用 `.husky/_/commit
 
 ## merge 场景行为
 
-| 场景                       | pre-commit              | commit-msg                             |
-| -------------------------- | ----------------------- | -------------------------------------- |
-| `git merge feature` 无冲突 | 跳过（MERGE_HEAD 存在） | 放行（commitlint 自动忽略 merge 消息） |
-| 冲突解决后 `git commit`    | 跳过（MERGE_HEAD 存在） | 校验 merge 提交的 message              |
-| 正常提交                   | 执行                    | 校验                                   |
+|场景|pre-commit|commit-msg|
+|-|-|-|
+|`git merge feature` 无冲突|跳过（MERGE_HEAD 存在）|放行（commitlint 自动忽略 merge 消息）|
+|冲突解决后 `git commit`|跳过（MERGE_HEAD 存在）|校验 merge 提交的 message|
+|正常提交|执行|校验|
 
 ## 常见问题
 

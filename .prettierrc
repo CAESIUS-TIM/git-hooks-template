@@ -1,4 +1,6 @@
 {
   "singleQuote": true,
-  "proseWrap": "preserve"
+  "proseWrap": "preserve",
+  "plugins": ["prettier-plugin-compact-markdown-table"],
+  "tableLayout": "compact"
 }

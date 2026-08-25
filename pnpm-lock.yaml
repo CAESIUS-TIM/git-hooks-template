@@ -22,6 +22,9 @@ importers:
       prettier:
         specifier: ^3.9.6
         version: 3.9.6
+      prettier-plugin-compact-markdown-table:
+        specifier: ^0.1.0
+        version: 0.1.0(prettier@3.9.6)
 
 packages:
   '@babel/code-frame@7.29.7':
@@ -895,6 +898,14 @@ packages:
       }
     engines: { node: '>=12' }
 
+  prettier-plugin-compact-markdown-table@0.1.0:
+    resolution:
+      {
+        integrity: sha512-g7b+55D/VsUoKJkF5XViPeu8kPqo3mUzby5EOFluv4+royfGLrNOA3S3SwwZ4yoP/UL8lUWKydwKSqRyc2vapA==,
+      }
+    peerDependencies:
+      prettier: ^3.0.0
+
   prettier@3.9.6:
     resolution:
       {
@@ -1564,6 +1575,10 @@ snapshots:
   picocolors@1.1.1: {}
 
   picomatch@4.0.5: {}
+
+  prettier-plugin-compact-markdown-table@0.1.0(prettier@3.9.6):
+    dependencies:
+      prettier: 3.9.6
 
   prettier@3.9.6: {}
 
